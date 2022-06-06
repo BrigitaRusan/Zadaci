@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Arukone </title>
+    <style media="screen">
+      td,tr{
+        background-color="#F0F0F0";
+      }
+    </style>
+  </head>
+  <body>
+    <input type="button" value="Započni igru!" onclick="my_table()">
+    <script type="text/javascript">
+      function my_table() {
+    var body = document.getElementsByTagName("body")[0];
+    var tble = document.createElement("table");
+    var tblBody = document.createElement("tbody");
+
+    var n=5;
+    for (var i = 0; i < n; i++) {
+      var row = document.createElement("tr");
+      for (var j = 0; j < n; j++) {
+        var cell = document.createElement("td");
+        var cellText = document.createTextNode("cell in row "+i+", column "+j);
+        cell.setAttribute("color", "#F0F0F0");
+        cell.appendChild(cellText);
+        row.appendChild(cell);
+      }
+      tblBody.appendChild(row);
+    }
+    tble.appendChild(tblBody);
+    body.appendChild(tble);
+    tble.setAttribute("border", "solid");
+    tble.setAttribute("background-color","#F0F0F0");
+
+  }
+    </script>
+  </body>
+</html>
