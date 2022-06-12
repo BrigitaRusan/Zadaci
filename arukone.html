@@ -3,38 +3,23 @@
   <head>
     <meta charset="utf-8">
     <title>Arukone </title>
-    <style media="screen">
-      td,tr{
-        background-color="#F0F0F0";
-      }
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://rp2.studenti.math.hr/~zbujanov/dz3/puzzle.js"></script>
   </head>
-  <body>
-    <input type="button" value="Započni igru!" onclick="my_table()">
-    <script type="text/javascript">
-      function my_table() {
-    var body = document.getElementsByTagName("body")[0];
-    var tble = document.createElement("table");
-    var tblBody = document.createElement("tbody");
 
-    var n=5;
-    for (var i = 0; i < n; i++) {
-      var row = document.createElement("tr");
-      for (var j = 0; j < n; j++) {
-        var cell = document.createElement("td");
-        var cellText = document.createTextNode("cell in row "+i+", column "+j);
-        cell.setAttribute("color", "#F0F0F0");
-        cell.appendChild(cellText);
-        row.appendChild(cell);
-      }
-      tblBody.appendChild(row);
-    }
-    tble.appendChild(tblBody);
-    body.appendChild(tble);
-    tble.setAttribute("border", "solid");
-    tble.setAttribute("background-color","#F0F0F0");
+<body oncontextmenu="return false;">   <!-- desni klik -->
+    <select id="tezina">
+      <option id="easy" selected>Easy</option>
+      <option id="medium" >Medium</option>
+      <option id="ard">Hard</option>
+    </select>
+    <button id="btn"> Započni igru!</button>
+    <div id="poljeIgre"></div> <br><br>
+    <div id="odabirBoje"></div> <br><br>
 
-  }
-    </script>
+    <div id="restart"></div>
+
+    <script type="text/javascript" src="arukone.js"></script>
+
   </body>
 </html>
